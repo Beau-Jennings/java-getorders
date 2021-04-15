@@ -34,11 +34,11 @@ public class CustomerController
         return new ResponseEntity<>(c, HttpStatus.OK);
     }
 
-    @GetMapping(value = "namelike/{likename}", produces = "application/json")
-    public ResponseEntity<?> findCustomerByName(
-            @PathVariable String likename)
+    @GetMapping(value = "namelike/{custname}", produces = "application/json")
+    public ResponseEntity<?> findByCustName(
+            @PathVariable String custname)
     {
-        Customer CustomerList = CustomerServices.findCustomerByName(likename);
+        List<Customer> CustomerList = CustomerServices.findByCustName(custname);
         return new ResponseEntity<>(CustomerList, HttpStatus.OK);
     }
 }
